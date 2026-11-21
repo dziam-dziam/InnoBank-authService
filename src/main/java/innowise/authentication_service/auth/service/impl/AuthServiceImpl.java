@@ -78,7 +78,7 @@ public class AuthServiceImpl implements AuthService {
     }
 
     @Override
-    @Transactional("authTransactionManager")
+    @Transactional
     public ResponseTokenPairDto login(LoginDto dto) {
         CredentialsEntity credentials = credentialsRepository
                 .findByLoginForUpdate(normalizeLogin(dto.login()))
@@ -108,7 +108,7 @@ public class AuthServiceImpl implements AuthService {
     }
 
     @Override
-    @Transactional("authTransactionManager")
+    @Transactional
     public ResponseTokenPairDto refresh(RefreshTokenDto dto) {
         Jwt jwt = jwtTokenService.decodeRefreshToken(dto.refreshToken());
         Long userId = Long.valueOf(jwt.getSubject());
