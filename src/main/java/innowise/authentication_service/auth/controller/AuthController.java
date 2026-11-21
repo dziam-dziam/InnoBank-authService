@@ -1,12 +1,12 @@
-package innowise.bankingApp.auth.controller;
+package innowise.authentication_service.auth.controller;
 
-import innowise.bankingApp.auth.model.Role;
-import innowise.bankingApp.auth.model.dto.request.CreateCredentialsDto;
-import innowise.bankingApp.auth.model.dto.request.LoginDto;
-import innowise.bankingApp.auth.model.dto.request.RefreshTokenDto;
-import innowise.bankingApp.auth.model.dto.response.ResponseCredentialsDto;
-import innowise.bankingApp.auth.model.dto.response.ResponseTokenPairDto;
-import innowise.bankingApp.auth.model.dto.response.ResponseTokenValidationDto;
+import innowise.authentication_service.auth.model.Role;
+import innowise.authentication_service.auth.model.dto.request.CreateCredentialsDto;
+import innowise.authentication_service.auth.model.dto.request.LoginDto;
+import innowise.authentication_service.auth.model.dto.request.RefreshTokenDto;
+import innowise.authentication_service.auth.model.dto.response.ResponseCredentialsDto;
+import innowise.authentication_service.auth.model.dto.response.ResponseTokenPairDto;
+import innowise.authentication_service.auth.model.dto.response.ResponseTokenValidationDto;
 import innowise.bankingApp.auth.service.AuthService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;

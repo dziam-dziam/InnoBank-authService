@@ -1,6 +1,6 @@
-package innowise.bankingApp.auth.model.dto.request;
+package innowise.authentication_service.auth.model.dto.request;
 
-import innowise.bankingApp.auth.model.Role;
+import innowise.authentication_service.auth.model.Role;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Pattern;

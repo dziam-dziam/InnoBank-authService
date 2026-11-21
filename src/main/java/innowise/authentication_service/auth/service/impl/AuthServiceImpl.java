@@ -1,16 +1,15 @@
-package innowise.bankingApp.auth.service.impl;
+package innowise.authentication_service.auth.service.impl;
 
-import innowise.bankingApp.auth.model.dto.request.CreateCredentialsDto;
-import innowise.bankingApp.auth.model.dto.request.LoginDto;
-import innowise.bankingApp.auth.model.dto.request.RefreshTokenDto;
-import innowise.bankingApp.auth.model.dto.response.ResponseCredentialsDto;
-import innowise.bankingApp.auth.model.dto.response.ResponseTokenPairDto;
-import innowise.bankingApp.auth.model.entity.CredentialsEntity;
-import innowise.bankingApp.auth.repository.CredentialsRepository;
-import innowise.bankingApp.auth.service.AuthService;
-import innowise.bankingApp.auth.service.JwtTokenService;
-import innowise.bankingApp.exception.UserNotFoundByIdException;
-import innowise.bankingApp.repository.UserRepository;
+import innowise.authentication_service.auth.exception.UserNotFoundByIdException;
+import innowise.authentication_service.auth.model.dto.request.CreateCredentialsDto;
+import innowise.authentication_service.auth.model.dto.request.LoginDto;
+import innowise.authentication_service.auth.model.dto.request.RefreshTokenDto;
+import innowise.authentication_service.auth.model.dto.response.ResponseCredentialsDto;
+import innowise.authentication_service.auth.model.dto.response.ResponseTokenPairDto;
+import innowise.authentication_service.auth.model.entity.CredentialsEntity;
+import innowise.authentication_service.auth.repository.CredentialsRepository;
+import innowise.authentication_service.auth.service.AuthService;
+import innowise.authentication_service.auth.service.JwtTokenService;
 import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.oauth2.jwt.Jwt;

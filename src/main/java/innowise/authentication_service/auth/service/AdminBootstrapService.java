@@ -1,10 +1,9 @@
-package innowise.bankingApp.auth.service;
+package innowise.authentication_service.auth.service;
 
-import innowise.bankingApp.auth.model.Role;
-import innowise.bankingApp.auth.model.dto.request.CreateCredentialsDto;
-import innowise.bankingApp.auth.model.entity.CredentialsEntity;
-import innowise.bankingApp.auth.repository.CredentialsRepository;
-import innowise.bankingApp.repository.UserRepository;
+
+import innowise.authentication_service.auth.model.Role;
+import innowise.authentication_service.auth.model.dto.request.CreateCredentialsDto;
+import innowise.authentication_service.auth.repository.CredentialsRepository;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotNull;
 import lombok.RequiredArgsConstructor;

@@ -1,6 +1,6 @@
-package innowise.bankingApp.auth.model.dto.response;
+package innowise.authentication_service.auth.model.dto.response;
 
-import innowise.bankingApp.auth.model.Role;
+import innowise.authentication_service.auth.model.Role;
 
 public record ResponseCredentialsDto(
         Long id,

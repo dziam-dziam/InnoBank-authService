@@ -1,6 +1,6 @@
-package innowise.bankingApp.auth.security;
+package innowise.authentication_service.auth.security;
 
-import innowise.bankingApp.auth.model.Role;
+import innowise.authentication_service.auth.model.Role;
 import org.springframework.security.oauth2.core.OAuth2Error;
 import org.springframework.security.oauth2.core.OAuth2TokenValidator;
 import org.springframework.security.oauth2.core.OAuth2TokenValidatorResult;

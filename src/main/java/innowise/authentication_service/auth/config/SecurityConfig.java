@@ -1,7 +1,7 @@
-package innowise.bankingApp.auth.config;
+package innowise.authentication_service.auth.config;
 
-import innowise.bankingApp.auth.security.AccountJwtAuthenticationConverter;
-import innowise.bankingApp.auth.security.SecurityErrorHandler;
+import innowise.authentication_service.auth.security.AccountJwtAuthenticationConverter;
+import innowise.authentication_service.auth.security.SecurityErrorHandler;
 import jakarta.servlet.DispatcherType;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnWebApplication;
 import org.springframework.context.annotation.Bean;

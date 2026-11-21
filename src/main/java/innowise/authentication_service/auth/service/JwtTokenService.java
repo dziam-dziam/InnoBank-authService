@@ -1,8 +1,8 @@
-package innowise.bankingApp.auth.service;
+package innowise.authentication_service.auth.service;
 
-import innowise.bankingApp.auth.config.JwtProperties;
-import innowise.bankingApp.auth.model.dto.response.ResponseTokenPairDto;
-import innowise.bankingApp.auth.model.entity.CredentialsEntity;
+import innowise.authentication_service.auth.config.JwtProperties;
+import innowise.authentication_service.auth.model.dto.response.ResponseTokenPairDto;
+import innowise.authentication_service.auth.model.entity.CredentialsEntity;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.oauth2.jose.jws.MacAlgorithm;

@@ -1,6 +1,6 @@
-package innowise.bankingApp.auth.exception;
+package innowise.authentication_service.auth.exception;
 
-import innowise.bankingApp.auth.controller.AuthController;
+import innowise.authentication_service.auth.controller.AuthController;
 import jakarta.validation.ConstraintViolationException;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.http.HttpStatus;

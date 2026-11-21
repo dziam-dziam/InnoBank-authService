@@ -1,4 +1,4 @@
-package innowise.bankingApp.auth.model.dto.response;
+package innowise.authentication_service.auth.model.dto.response;
 
 public record ResponseTokenPairDto(
         String accessToken,

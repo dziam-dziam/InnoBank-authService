@@ -1,4 +1,4 @@
-package innowise.bankingApp.auth.config;
+package innowise.authentication_service.auth.config;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 

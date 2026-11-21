@@ -1,4 +1,4 @@
-package innowise.bankingApp.auth.security;
+package innowise.authentication_service.auth.security;
 
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;

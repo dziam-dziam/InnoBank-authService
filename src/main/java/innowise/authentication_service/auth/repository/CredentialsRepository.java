@@ -1,6 +1,6 @@
-package innowise.bankingApp.auth.repository;
+package innowise.authentication_service.auth.repository;
 
-import innowise.bankingApp.auth.model.entity.CredentialsEntity;
+import innowise.authentication_service.auth.model.entity.CredentialsEntity;
 import jakarta.persistence.LockModeType;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Lock;

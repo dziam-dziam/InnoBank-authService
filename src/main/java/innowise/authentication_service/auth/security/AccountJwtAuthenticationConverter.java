@@ -1,8 +1,7 @@
-package innowise.bankingApp.auth.security;
+package innowise.authentication_service.auth.security;
 
-import innowise.bankingApp.auth.model.entity.CredentialsEntity;
-import innowise.bankingApp.auth.repository.CredentialsRepository;
-import innowise.bankingApp.repository.UserRepository;
+import innowise.authentication_service.auth.model.entity.CredentialsEntity;
+import innowise.authentication_service.auth.repository.CredentialsRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.core.convert.converter.Converter;
 import org.springframework.security.authentication.AbstractAuthenticationToken;

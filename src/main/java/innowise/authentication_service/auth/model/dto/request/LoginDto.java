@@ -1,4 +1,4 @@
-package innowise.bankingApp.auth.model.dto.request;
+package innowise.authentication_service.auth.model.dto.request;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;

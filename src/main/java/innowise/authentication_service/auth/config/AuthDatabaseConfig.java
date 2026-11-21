@@ -1,6 +1,6 @@
-package innowise.bankingApp.auth.config;
+package innowise.authentication_service.auth.config;
 
-import innowise.bankingApp.auth.model.entity.CredentialsEntity;
+import innowise.authentication_service.auth.model.entity.CredentialsEntity;
 import jakarta.persistence.EntityManagerFactory;
 import liquibase.integration.spring.SpringLiquibase;
 import org.springframework.beans.factory.annotation.Qualifier;

@@ -1,7 +1,7 @@
-package innowise.bankingApp.auth.config;
+package innowise.authentication_service.auth.config;
 
 import com.nimbusds.jose.jwk.source.ImmutableSecret;
-import innowise.bankingApp.auth.security.JwtClaimsValidator;
+import innowise.authentication_service.auth.security.JwtClaimsValidator;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

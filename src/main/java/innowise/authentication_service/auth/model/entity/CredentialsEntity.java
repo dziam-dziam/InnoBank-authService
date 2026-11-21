@@ -1,7 +1,5 @@
-package innowise.bankingApp.auth.model.entity;
+package innowise.authentication_service.auth.model.entity;
 
-import innowise.bankingApp.auth.model.Role;
-import innowise.bankingApp.model.entity.AuditableEntity;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
@@ -16,6 +14,7 @@ import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Positive;
 import lombok.Getter;
 import lombok.Setter;
+import innowise.authentication_service.auth.model.Role;
 
 @Entity
 @Table(name = "credentials")
