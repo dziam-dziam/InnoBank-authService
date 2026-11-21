@@ -1,5 +1,6 @@
 package innowise.authentication_service.auth.service.impl;
 
+import innowise.authentication_service.auth.client.UserDirectoryClient;
 import innowise.authentication_service.auth.exception.UserNotFoundByIdException;
 import innowise.authentication_service.auth.model.dto.request.CreateCredentialsDto;
 import innowise.authentication_service.auth.model.dto.request.LoginDto;
@@ -26,19 +27,19 @@ import java.util.UUID;
 public class AuthServiceImpl implements AuthService {
 
     private final CredentialsRepository credentialsRepository;
-    private final UserRepository userRepository;
+    private final UserDirectoryClient userDirectoryClient;
     private final PasswordEncoder passwordEncoder;
     private final JwtTokenService jwtTokenService;
     private final String dummyPasswordHash;
 
     public AuthServiceImpl(
             CredentialsRepository credentialsRepository,
-            UserRepository userRepository,
+            UserDirectoryClient userDirectoryClient,
             PasswordEncoder passwordEncoder,
             JwtTokenService jwtTokenService
     ) {
         this.credentialsRepository = credentialsRepository;
-        this.userRepository = userRepository;
+        this.userDirectoryClient = userDirectoryClient;
         this.passwordEncoder = passwordEncoder;
         this.jwtTokenService = jwtTokenService;
         this.dummyPasswordHash = passwordEncoder.encode(
@@ -47,9 +48,9 @@ public class AuthServiceImpl implements AuthService {
     }
 
     @Override
-    @Transactional("authTransactionManager")
+    @Transactional
     public ResponseCredentialsDto saveCredentials(CreateCredentialsDto dto) {
-        if (!userRepository.existsById(dto.userId())) {
+        if (!userDirectoryClient.existsById(dto.userId())) {
             throw new UserNotFoundByIdException(dto.userId());
         }
 
@@ -97,7 +98,7 @@ public class AuthServiceImpl implements AuthService {
             );
         }
 
-        if (!userRepository.existsByIdAndActiveTrue(credentials.getUserId())) {
+        if (!userDirectoryClient.existsByIdAndActiveTrue(credentials.getUserId())) {
             throw new BadCredentialsException(
                     "Invalid credentials or token"
             );
@@ -125,7 +126,7 @@ public class AuthServiceImpl implements AuthService {
                 || !credentials.getRole().name().equals(
                 jwt.getClaimAsString("role")
         )
-                || !userRepository.existsByIdAndActiveTrue(userId)) {
+                || !userDirectoryClient.existsByIdAndActiveTrue(userId)) {
             throw new BadCredentialsException(
                     "Invalid credentials or token"
             );

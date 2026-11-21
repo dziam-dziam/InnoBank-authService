@@ -1,8 +1,10 @@
 package innowise.authentication_service.auth.service;
 
 
+import innowise.authentication_service.auth.client.UserDirectoryClient;
 import innowise.authentication_service.auth.model.Role;
 import innowise.authentication_service.auth.model.dto.request.CreateCredentialsDto;
+import innowise.authentication_service.auth.model.entity.CredentialsEntity;
 import innowise.authentication_service.auth.repository.CredentialsRepository;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotNull;
@@ -19,10 +21,10 @@ import java.util.Locale;
 public class AdminBootstrapService {
 
     private final CredentialsRepository credentialsRepository;
-    private final UserRepository userRepository;
+    private final UserDirectoryClient userDirectoryClient;
     private final AuthService authService;
 
-    @Transactional("authTransactionManager")
+    @Transactional
     public void initialize(@NotNull @Valid CreateCredentialsDto dto) {
         if (dto.role() != Role.ADMIN) {
             throw new IllegalArgumentException(
@@ -30,7 +32,7 @@ public class AdminBootstrapService {
             );
         }
 
-        if (!userRepository.existsByIdAndActiveTrue(dto.userId())) {
+        if (!userDirectoryClient.existsByIdAndActiveTrue(dto.userId())) {
             throw new IllegalStateException(
                     "Bootstrap administrator must reference an existing active user"
             );

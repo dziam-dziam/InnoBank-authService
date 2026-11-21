@@ -4,7 +4,7 @@ package innowise.authentication_service.auth.bootstrap;
 import innowise.authentication_service.auth.config.AdminBootstrapProperties;
 import innowise.authentication_service.auth.model.Role;
 import innowise.authentication_service.auth.model.dto.request.CreateCredentialsDto;
-import innowise.bankingApp.auth.service.AdminBootstrapService;
+import innowise.authentication_service.auth.service.AdminBootstrapService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;

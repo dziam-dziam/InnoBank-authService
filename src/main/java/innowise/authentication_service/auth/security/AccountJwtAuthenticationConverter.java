@@ -1,5 +1,6 @@
 package innowise.authentication_service.auth.security;
 
+import innowise.authentication_service.auth.client.UserDirectoryClient;
 import innowise.authentication_service.auth.model.entity.CredentialsEntity;
 import innowise.authentication_service.auth.repository.CredentialsRepository;
 import lombok.RequiredArgsConstructor;
@@ -19,7 +20,7 @@ public class AccountJwtAuthenticationConverter
         implements Converter<Jwt, AbstractAuthenticationToken> {
 
     private final CredentialsRepository credentialsRepository;
-    private final UserRepository userRepository;
+    private final UserDirectoryClient userDirectoryClient;
 
     @Override
     public AbstractAuthenticationToken convert(Jwt jwt) {
@@ -36,7 +37,7 @@ public class AccountJwtAuthenticationConverter
                 );
 
         if (!credentials.getRole().name().equals(jwt.getClaimAsString("role"))
-                || !userRepository.existsByIdAndActiveTrue(userId)) {
+                || !userDirectoryClient.existsByIdAndActiveTrue(userId)) {
             throw new InvalidBearerTokenException("Invalid access token");
         }
 

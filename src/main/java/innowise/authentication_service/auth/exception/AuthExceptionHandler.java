@@ -13,6 +13,16 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 @RestControllerAdvice(basePackageClasses = AuthController.class)
 public class AuthExceptionHandler {
 
+    @ExceptionHandler(UserNotFoundByIdException.class)
+    public ProblemDetail handleMissingUser(UserNotFoundByIdException exception) {
+        return ProblemDetail.forStatusAndDetail(HttpStatus.NOT_FOUND, exception.getMessage());
+    }
+
+    @ExceptionHandler(UserDirectoryUnavailableException.class)
+    public ProblemDetail handleDirectoryUnavailable(UserDirectoryUnavailableException exception) {
+        return ProblemDetail.forStatusAndDetail(HttpStatus.SERVICE_UNAVAILABLE, exception.getMessage());
+    }
+
     @ExceptionHandler(AuthenticationException.class)
     public ProblemDetail handleAuthentication(
             AuthenticationException exception

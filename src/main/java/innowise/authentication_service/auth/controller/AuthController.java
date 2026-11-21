@@ -7,7 +7,7 @@ import innowise.authentication_service.auth.model.dto.request.RefreshTokenDto;
 import innowise.authentication_service.auth.model.dto.response.ResponseCredentialsDto;
 import innowise.authentication_service.auth.model.dto.response.ResponseTokenPairDto;
 import innowise.authentication_service.auth.model.dto.response.ResponseTokenValidationDto;
-import innowise.bankingApp.auth.service.AuthService;
+import innowise.authentication_service.auth.service.AuthService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.CacheControl;
